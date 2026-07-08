@@ -1,10 +1,26 @@
 #include <iostream>
+#include <vector>
 
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 #include <SFML/Window.hpp>
 #include <SFML/System.hpp>
 #include <SFML/Network.hpp>
+
+
+
+
+struct Particle
+{
+    sf::CircleShape forma; // Raggio
+    sf::Vector2f posizione;
+    sf::Vector2f velocita;
+};
+
+
+
+
+
 
 
 int main()
@@ -22,7 +38,6 @@ int main()
     window.setView(Simulazione);
 
 
-
     // VARIABILI GENERICHE
     float gravita = 9.81f;
     float energyDissipationFactor = 0.1f;
@@ -37,17 +52,47 @@ int main()
 
 
 
-    // Creo una particella rossa
-    sf::CircleShape particella(0.002f * ppm); // 0.002 metri di raggio, cioè 2 mm
-    particella.setFillColor(sf::Color(46, 129, 246));
-       
 
 
-    // Posizione iniziale della Particella
-    particella.setPosition({ (areaSimulazione.x / 2) - (particella.getRadius())  ,   (areaSimulazione.y / 2) - (particella.getRadius()) });
 
-    // Velocità iniziale della particella
-    sf::Vector2f velocita(0.0f, 0.0f);
+
+
+
+    // Vettore che contiene tutte le particelle
+    std::vector<Particle> particles;
+
+    int numeroInizialeParticelle = 1000;
+    float spaziaturaTraParticelle = 0.01f; // 10mm
+    float inizioX = 0.10f;
+    float inizioY = 0.05f; // Corretto a 5cm in base al tuo commento
+    float larghezzaZonaSpawn = 0.40f;
+
+    // ATTENZIONE: Questo calcola il numero di COLONNE, non l'altezza. Deve essere un intero (int)
+    int colonne = larghezzaZonaSpawn / spaziaturaTraParticelle;
+
+    // I cicli in C++ partono RIGOROSAMENTE da 0
+    for (int i = 0; i < numeroInizialeParticelle; i++)
+    {
+        Particle p; // Oppure Goccia, dipende come hai chiamato la struct
+
+        p.forma.setRadius(0.002f * ppm);
+        p.forma.setOrigin({ 0.002f * ppm, 0.002f * ppm }); // Allinea il centro
+
+        // CALCOLO A GRIGLIA
+        int c = i % colonne; // Asse X = Modulo (Ciclo continuo)
+        int r = i / colonne; // Asse Y = Divisione (Scaglioni)
+
+        // ASSEGNAZIONE FISICA IN METRI
+        p.posizione = sf::Vector2f(
+            inizioX + (c * spaziaturaTraParticelle),
+            inizioY + (r * spaziaturaTraParticelle)
+        );
+
+        p.velocita = sf::Vector2f(0.0f, 0.0f);
+        p.forma.setFillColor(sf::Color::Blue);
+
+        particles.push_back(p);
+    }
 
 
 
@@ -77,44 +122,75 @@ int main()
 
         //UPDATE
 
-        // Facciamo agire la gravità
-        velocita.y += gravita * dt;
+        // update di ogni particella nell' array
+
+        for (Particle& particella : particles)
+        {
+
+
+            float areaFisicaX = window.getView().getSize().x / ppm;
+            float areaFisicaY = window.getView().getSize().y / ppm;
+            float diametroFisico = 0.004f; // 4mm totali, dato che il raggio è 0.002f
+
+
+
+
+
+            // Facciamo lavorare la gravità:
+            particella.velocita.y += gravita * dt;
+
+            // Aggiorniamo la posizione per la velocità corrente per far muovere le particelle:
+            particella.posizione.x += particella.velocita.x * dt;
+            particella.posizione.y += particella.velocita.y * dt;
+
+
+
+            // Logica per la collisione con i bordi dello schermo
+
+            // Muro Sinistro
+            if (particella.posizione.x < 0.0f)
+            {
+                particella.posizione.x = 0.0f;
+                particella.velocita.x = -(particella.velocita.x * (1.0f - energyDissipationFactor));
+            }
+
+            // Muro Destro
+            if (particella.posizione.x > areaFisicaX - diametroFisico)
+            {
+                particella.posizione.x = areaFisicaX - diametroFisico;
+                particella.velocita.x = -(particella.velocita.x * (1.0f - energyDissipationFactor));
+            }
+
+            // Muro Sopra
+            if (particella.posizione.y < 0.0f)
+            {
+                particella.posizione.y = 0.0f;
+                particella.velocita.y = -(particella.velocita.y * (1.0f - energyDissipationFactor));
+            }
+
+            // Muro Sotto
+            if (particella.posizione.y > areaFisicaY - diametroFisico)
+            {
+                particella.posizione.y = areaFisicaY - diametroFisico;
+                particella.velocita.y = -(particella.velocita.y * (1.0f - energyDissipationFactor));
+            }
+
+            // IL PONTE GRAFICO
+            // Questa è l'unica riga in cui la fisica (metri) viene tradotta in grafica (pixel).
+            // Si esegue alla fine del loop per ogni particella, dopo aver risolto tutti i possibili urti.
+            particella.forma.setPosition({ particella.posizione.x * ppm, particella.posizione.y * ppm });
+
+        }
+        
+
+
+
+
+
+
+
 
         
-        // Facciamo muovere la particella
-        particella.move(velocita * dt * ppm);
-
-        // Leggiamo dove si trova la particella
-        sf::Vector2f pos = particella.getPosition();
-
-
-
-        // Logica per la collisione con i bordi dello schermo
-
-        
-        if (pos.x < 0.0f) // Muro Sinistro
-        {
-            particella.setPosition({ 0.0f, pos.y });
-            velocita.x = - ( velocita.x * ( 1.0f - energyDissipationFactor) ) ;
-        }
-
-        if (pos.x > areaSimulazione.x - (particella.getRadius() * 2.0f)) // Muro Destro
-        {
-            particella.setPosition({ areaSimulazione.x - (particella.getRadius() * 2.0f), pos.y });
-            velocita.x = - ( velocita.x * ( 1.0f - energyDissipationFactor) );
-        }
-
-        if (pos.y < 0.0f) // Muro Sopra
-        {
-            particella.setPosition({ pos.x, 0.0f });
-            velocita.y = - ( velocita.y * ( 1.0f - energyDissipationFactor ) );
-        }
-
-        if (pos.y > areaSimulazione.y - (particella.getRadius() * 2.0f)) // Muro Sotto
-        {
-            particella.setPosition({ pos.x, areaSimulazione.y - (particella.getRadius() * 2.0f) });
-            velocita.y = - ( velocita.y * ( 1.0f - energyDissipationFactor ) );
-        }
         
         
 
@@ -130,8 +206,11 @@ int main()
         // Draw things for the current frame in between 'clear' & 'display'
 
 
-        // renderizziamo la particella
-        window.draw(particella);
+        // renderizziamo tutte le particelle
+        for (auto& particella : particles)
+        {   
+            window.draw(particella.forma);
+        }
 
 
 
