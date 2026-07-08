@@ -3,8 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\ipadd\\source\\repos\\Particle Simulator\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{6C8AD728-9C82-4C09-B402-E5B112A1D1DA}|Particle Simulator\\Particle Simulator.vcxproj|C:\\Users\\ipadd\\source\\repos\\Particle Simulator\\Particle Simulator\\Physics.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{6C8AD728-9C82-4C09-B402-E5B112A1D1DA}|Particle Simulator\\Particle Simulator.vcxproj|solutionrelative:Particle Simulator\\Physics.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{6C8AD728-9C82-4C09-B402-E5B112A1D1DA}|Particle Simulator\\Particle Simulator.vcxproj|C:\\Users\\ipadd\\source\\repos\\Particle Simulator\\Particle Simulator\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{6C8AD728-9C82-4C09-B402-E5B112A1D1DA}|Particle Simulator\\Particle Simulator.vcxproj|solutionrelative:Particle Simulator\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6C8AD728-9C82-4C09-B402-E5B112A1D1DA}|Particle Simulator\\Particle Simulator.vcxproj|C:\\Users\\ipadd\\source\\repos\\Particle Simulator\\Particle Simulator\\Renderer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{6C8AD728-9C82-4C09-B402-E5B112A1D1DA}|Particle Simulator\\Particle Simulator.vcxproj|solutionrelative:Particle Simulator\\Renderer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6C8AD728-9C82-4C09-B402-E5B112A1D1DA}|Particle Simulator\\Particle Simulator.vcxproj|C:\\Users\\ipadd\\source\\repos\\Particle Simulator\\Particle Simulator\\Renderer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{6C8AD728-9C82-4C09-B402-E5B112A1D1DA}|Particle Simulator\\Particle Simulator.vcxproj|solutionrelative:Particle Simulator\\Renderer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6C8AD728-9C82-4C09-B402-E5B112A1D1DA}|Particle Simulator\\Particle Simulator.vcxproj|C:\\Users\\ipadd\\source\\repos\\Particle Simulator\\Particle Simulator\\Physics.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{6C8AD728-9C82-4C09-B402-E5B112A1D1DA}|Particle Simulator\\Particle Simulator.vcxproj|solutionrelative:Particle Simulator\\Physics.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6C8AD728-9C82-4C09-B402-E5B112A1D1DA}|Particle Simulator\\Particle Simulator.vcxproj|C:\\Users\\ipadd\\source\\repos\\Particle Simulator\\Particle Simulator\\EventsHandler.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{6C8AD728-9C82-4C09-B402-E5B112A1D1DA}|Particle Simulator\\Particle Simulator.vcxproj|solutionrelative:Particle Simulator\\EventsHandler.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6C8AD728-9C82-4C09-B402-E5B112A1D1DA}|Particle Simulator\\Particle Simulator.vcxproj|C:\\Users\\ipadd\\source\\repos\\Particle Simulator\\Particle Simulator\\Spawner.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{6C8AD728-9C82-4C09-B402-E5B112A1D1DA}|Particle Simulator\\Particle Simulator.vcxproj|solutionrelative:Particle Simulator\\Spawner.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,15 +42,99 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "main.cpp",
               "DocumentMoniker": "C:\\Users\\ipadd\\source\\repos\\Particle Simulator\\Particle Simulator\\main.cpp",
               "RelativeDocumentMoniker": "Particle Simulator\\main.cpp",
-              "ToolTip": "C:\\Users\\ipadd\\source\\repos\\Particle Simulator\\Particle Simulator\\main.cpp*",
-              "RelativeToolTip": "Particle Simulator\\main.cpp*",
-              "ViewState": "AgIAAHEAAAAAAAAAAAAowIEAAAAAAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\ipadd\\source\\repos\\Particle Simulator\\Particle Simulator\\main.cpp",
+              "RelativeToolTip": "Particle Simulator\\main.cpp",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAAABwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-07-05T21:26:17.211Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 313,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Renderer.h",
+              "DocumentMoniker": "C:\\Users\\ipadd\\source\\repos\\Particle Simulator\\Particle Simulator\\Renderer.h",
+              "RelativeDocumentMoniker": "Particle Simulator\\Renderer.h",
+              "ToolTip": "C:\\Users\\ipadd\\source\\repos\\Particle Simulator\\Particle Simulator\\Renderer.h",
+              "RelativeToolTip": "Particle Simulator\\Renderer.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-07-08T22:10:04.248Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Renderer.cpp",
+              "DocumentMoniker": "C:\\Users\\ipadd\\source\\repos\\Particle Simulator\\Particle Simulator\\Renderer.cpp",
+              "RelativeDocumentMoniker": "Particle Simulator\\Renderer.cpp",
+              "ToolTip": "C:\\Users\\ipadd\\source\\repos\\Particle Simulator\\Particle Simulator\\Renderer.cpp",
+              "RelativeToolTip": "Particle Simulator\\Renderer.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-07-08T22:11:46.844Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Physics.cpp",
+              "DocumentMoniker": "C:\\Users\\ipadd\\source\\repos\\Particle Simulator\\Particle Simulator\\Physics.cpp",
+              "RelativeDocumentMoniker": "Particle Simulator\\Physics.cpp",
+              "ToolTip": "C:\\Users\\ipadd\\source\\repos\\Particle Simulator\\Particle Simulator\\Physics.cpp",
+              "RelativeToolTip": "Particle Simulator\\Physics.cpp",
+              "ViewState": "AgIAABUAAAAAAAAAAAAowCMAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-07-08T22:01:36.813Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Physics.h",
+              "DocumentMoniker": "C:\\Users\\ipadd\\source\\repos\\Particle Simulator\\Particle Simulator\\Physics.h",
+              "RelativeDocumentMoniker": "Particle Simulator\\Physics.h",
+              "ToolTip": "C:\\Users\\ipadd\\source\\repos\\Particle Simulator\\Particle Simulator\\Physics.h",
+              "RelativeToolTip": "Particle Simulator\\Physics.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-07-08T21:57:18.401Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "EventsHandler.cpp",
+              "DocumentMoniker": "C:\\Users\\ipadd\\source\\repos\\Particle Simulator\\Particle Simulator\\EventsHandler.cpp",
+              "RelativeDocumentMoniker": "Particle Simulator\\EventsHandler.cpp",
+              "ToolTip": "C:\\Users\\ipadd\\source\\repos\\Particle Simulator\\Particle Simulator\\EventsHandler.cpp",
+              "RelativeToolTip": "Particle Simulator\\EventsHandler.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-07-08T21:55:03.44Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Spawner.cpp",
+              "DocumentMoniker": "C:\\Users\\ipadd\\source\\repos\\Particle Simulator\\Particle Simulator\\Spawner.cpp",
+              "RelativeDocumentMoniker": "Particle Simulator\\Spawner.cpp",
+              "ToolTip": "C:\\Users\\ipadd\\source\\repos\\Particle Simulator\\Particle Simulator\\Spawner.cpp",
+              "RelativeToolTip": "Particle Simulator\\Spawner.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-07-08T21:45:14.982Z",
               "EditorCaption": ""
             }
           ]
